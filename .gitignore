@@ -1,0 +1,39 @@
+# Node.js modules
+/node_modules/
+/uploads/
+
+# TypeScript build output
+/dist/
+/build/
+
+# npm log files
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Environment variable files
+.env
+
+# VS Code settings
+.vscode/
+
+# Mac OS system files
+.DS_Store
+
+# Linux system files
+*~
+
+# Windows system files
+Thumbs.db
+ehthumbs.db
+
+# TypeScript configuration files (optional, if you don't want to commit them)
+tsconfig.tsbuildinfo
+
+# Optional build artifacts
+/.next
+/.turbo
+
+# IDE/Editor files
+.idea/
+*.swp
