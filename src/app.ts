@@ -28,10 +28,6 @@ app.use(bodyParser.json());
 // Use Routes
 app.use('/posts', postRoutes);
 
-app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
-  console.error(err.stack);
-  res.status(500).json({ message: "An internal server error occurred" });
-});
 
 // Start server
 const PORT = process.env.PORT || 3000;

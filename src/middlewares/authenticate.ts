@@ -6,9 +6,8 @@ export const authenticate = async (req: Request, res: Response, next: NextFuncti
   const token = req.header('Authorization')?.split('Bearer ')[1];
   let error;
   if (!token) {
-    error = new Error('Authentication token missing');
-    (error as any).statusCode = 401;
-    return next(error);
+    res.status(401).json({ message: "Authentication token missing", error });
+    return;
   }
 
   try {
@@ -17,9 +16,8 @@ export const authenticate = async (req: Request, res: Response, next: NextFuncti
     (req as any).user = decodedToken;
     next(); // Token is valid, proceed to the next middleware/route handler
   } catch (error) {
-    error = new Error('Invalid or expired token');
-    (error as any).statusCode = 401; 
-    return next(error); 
+    res.status(401).json({ message: "Invalid or expired token", error });
+    return;
   }
 };
 
